@@ -6,3 +6,8 @@
 build/**
 out/**
 **.iml
+
+# Gradle
+**/.gradle/**
+.gradle
+build/
