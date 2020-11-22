@@ -5,6 +5,14 @@ public class BubbleSort {
         //инициализация массива натуральных чисел
         int[] mas = {18, 20, 9, 63, 8, 46, 7, 4, 15, 99, 52, 1, 89, 3, 6};
         //алгоритм сортировки - пузырек
+        mas = sort(mas);
+        //вывод в консоль отсортированног массива
+        for (int i = 0; i < mas.length; i++) {
+            System.out.print(mas[i] + "  ");
+        }
+    }
+
+    public static int[] sort(int[] mas) {
         int t;
         for(int j = 0; j < mas.length; j++){
             for(int i = 0; i < mas.length - 1; i++){
@@ -15,9 +23,6 @@ public class BubbleSort {
                 }
             }
         }
-        //вывод в консоль отсортированног массива
-        for (int i = 0; i < mas.length; i++) {
-            System.out.print(mas[i] + "  ");
-        }
+        return mas;
     }
 }
