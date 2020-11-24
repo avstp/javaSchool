@@ -13,7 +13,7 @@ public class Shell {
             System.out.println("Введите одну из трех команд: Time, Date, Exit");
             str = in.nextLine();
             newCommand = false;
-            for (int i = 0; i < mas.length & !newCommand; i++) {
+            for (int i = 0; i < mas.length && !newCommand; i++) {
                 if (str.equalsIgnoreCase(mas[i].getName())) { //проверка соответствий наименования команд независимой от регистра
                     newCommand = true;
                     System.out.print("Команда " + mas[i].getName() + ": ");
