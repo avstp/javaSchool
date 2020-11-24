@@ -16,5 +16,6 @@ dependencies {
     compile(group: 'org.apache.commons', name: 'commons-lang3', version: '3.11')
 
     testCompile(group: 'junit', name: 'junit', version: jUnit)
+    implementation 'junit:junit:4.12'
 
 }

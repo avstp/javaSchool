@@ -1,6 +1,7 @@
 package homeWork_1;
 
 import java.util.Scanner;
+
 public class Division {
     public static void main(String[] args){
         int a, b;
