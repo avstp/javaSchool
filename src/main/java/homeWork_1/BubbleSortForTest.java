@@ -1,6 +1,6 @@
-package homeWork_1;
+package main.java.homeWork_1;
 
-public class BubbleSort {
+public class BubbleSortForTest {
     public static void main(String[] args){
         //инициализация массива натуральных чисел
         int[] mas = {18, 20, 9, 63, 8, 46, 7, 4, 15, 99, 52, 1, 89, 3, 6};
