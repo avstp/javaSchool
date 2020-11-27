@@ -26,11 +26,13 @@ public class LList {
     public Object get(int id) {
         Node itemId = root;
         if (id > 0) {
-            for (int i = 0; i < (id - 1); i++) {
-                if (itemId.next == null && id - 1 != i) {
+            for (int i = 0; i < id && i!= id-1; i++) {
+                if (itemId.next == null) {
                     System.out.println("Количество элементов в списке меньше введеного значения " + id);
                     return null;
-                } else itemId = itemId.next;
+                } else {
+                    itemId = itemId.next;
+                }
             }
             return itemId.data;
         } else {
