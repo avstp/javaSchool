@@ -1,13 +1,6 @@
 package homeWork_3;
 
-class Node {
-    Object data;
-    Node next;
-
-    Node(Object data) {
-        this.data = data;
-    }
-}
+import java.util.Objects;
 
 public class LList {
     private Node root;
@@ -24,21 +17,15 @@ public class LList {
 
     //возвращаем из списка элнмент № id
     public Object get(int id) {
-        Node itemId = root;
-        if (id > 0) {
-            for (int i = 0; i < id && i!= id-1; i++) {
-                if (itemId.next == null) {
-                    System.out.println("Количество элементов в списке меньше введеного значения " + id);
-                    return null;
-                } else {
-                    itemId = itemId.next;
-                }
-            }
-            return itemId.data;
-        } else {
-            System.out.println("Количество элементов в списке меньше введеного значения " + id);
+        if (id < 1) {
             return null;
         }
+        Node item = root;
+        while ((id > 1) && !Objects.isNull(item)) {
+            id--;
+            item = item.next;
+        }
+        return item;
     }
 
     //возвращаем размер списка
