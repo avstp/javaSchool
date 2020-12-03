@@ -13,6 +13,7 @@ public class Person implements Comparable<Person> {
         this.surname = surname;
         this.age = age;
     }
+
     public Person() {
         this.name = "";
         this.surname = "";
@@ -21,17 +22,22 @@ public class Person implements Comparable<Person> {
 
     @Override
     public String toString() {
-        return surname +" "+ name + ", "+ age + "  ";
+        return surname + " " + name + ", " + age + "  ";
     }
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Person)) return false;
-        Person person = (Person) o;
-        return age == person.age &&
-                Objects.equals(name, person.name) &&
-                Objects.equals(surname, person.surname);
+        if (o != null) {
+            if (this == o) return true;
+            if (!(o instanceof Person)) return false;
+            Person person = (Person) o;
+            return age == person.age &&
+                    Objects.equals(name, person.name) &&
+                    Objects.equals(surname, person.surname);
+        }
+        else{
+            return false;
+        }
     }
 
     @Override
@@ -42,38 +48,48 @@ public class Person implements Comparable<Person> {
     @Override
     //сортировка сначала по Фамилии, затем по Имени и окончательно по возрасту
     public int compareTo(Person person) {
-        int result = this.surname.compareTo(person.surname);
-        if(result != 0){
-            return result;
+        if (person != null) {
+            int result = this.surname.compareTo(person.surname);
+            if (result != 0) {
+                return result;
+            }
+            result = this.name.compareTo(person.name);
+            if (result != 0) {
+                return result;
+            }
+            result = this.age - person.age;
+            if (result != 0) {
+                return (int) result / Math.abs(result);
+            }
+            return 0;
         }
-        result = this.name.compareTo(person.name);
-        if(result != 0){
-            return result;
+        else{
+            return 1;
         }
-        result = this.age - person.age;
-        if(result != 0){
-            return (int)result/Math.abs(result);
-        }
-        return 0;
     }
+
     //объединяем имя
-    public void connotation(Person person){
-       this.surname = this.surname + " + " + person.surname;
-       this.name = this.name + " + " + person.name;
-        this.age = this.age  + person.age;
+    public void connotation(Person person) {
+        this.surname = this.surname + " + " + person.surname;
+        this.name = this.name + " + " + person.name;
+        this.age = this.age + person.age;
     }
-    public void setPerson(Person person){
+
+    public void setPerson(Person person) {
         this.surname = person.surname;
         this.name = person.name;
         this.age = person.age;
     }
-    public String getName(){
+
+    public String getName() {
         return this.name;
     }
-    public String getSurname(){
+
+    public String getSurname() {
         return this.surname;
     }
-    public int getAge(){
+
+    public int getAge() {
         return this.age;
     }
 }
